@@ -1,3 +1,4 @@
+  
 const MORSE_TABLE = {
     '.-':     'a',
     '-...':   'b',
@@ -36,18 +37,13 @@ const MORSE_TABLE = {
     '----.':  '9',
     '-----':  '0',
 };
-
-
-    function decode(expr) {
-        tempArr = []
-        for (let i = 0; i<expr.length; i+=10){
-            tempArr.push(expr.slice(i,i+10));      
-        }
-       result = tempArr.map(a => MORSE_TABLE[a.replace(/10/g, '.').replace(/11/g, '-').replace(/00/g, '')] || ' ')
-       return result.join('')
+let expr = '00000011110000001111';
+    tempArr = []
+    for (let i = 0; i<expr.length; i+=10){
+        tempArr.push(expr.slice(i,i+10));      
     }
-    
+    console.log(tempArr)
+   result = tempArr.map(a => MORSE_TABLE[a.replace(/10/g, '.').replace(/11/g, '-').replace(/00/g, '')] || ' ')
+    console.log(result.join(''))
 
-module.exports = {
-    decode
-}
+
